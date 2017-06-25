@@ -495,57 +495,6 @@
             </reporting>
         </profile>
     </profiles>	
-I'm trying to follow these tutorials (1,2) to achieve the mentioned goal. But I'm still getting this error from Maven:
-
-INFO] Installing /home/valter/temp-workspace/document-engine/target/application-1.0.0.CI-SNAPSHOT.jar to /home/valter/.m2/repository/com/company-solutions/application/1.0.0.CI-SNAPSHOT/application-1.0.0.CI-SNAPSHOT.jar
-[INFO] Installing /home/valter/temp-workspace/document-engine/pom.xml to /home/valter/.m2/repository/com/company-solutions/application/1.0.0.CI-SNAPSHOT/application-1.0.0.CI-SNAPSHOT.pom
-[INFO] 
-[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ application ---
-Downloading: s3://myrepo.company.solutions/snapshot/com/company-solutions/application/1.0.0.CI-SNAPSHOT/maven-metadata.xml
-[WARNING] s3://myrepo.company.solutions/snapshot - Connection refused
-[WARNING] Could not transfer metadata com.company-solutions:application:1.0.0.CI-SNAPSHOT/maven-metadata.xml from/to s3.snapshot (s3://myrepo.company.solutions/snapshot): Could not connect to repository
-[INFO] Logged off - myrepo.company.solutions
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 01:31 min
-[INFO] Finished at: 2015-11-16T18:36:26+01:00
-[INFO] Final Memory: 181M/1289M
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy (default-deploy) on project application: Failed to retrieve remote metadata com.company-solutions:application:1.0.0.CI-SNAPSHOT/maven-metadata.xml: Could not transfer metadata com.company-solutions:application:1.0.0.CI-SNAPSHOT/maven-metadata.xml from/to s3.snapshot (s3://myrepo.company.solutions/snapshot): Could not connect to repository: Status Code: 400, AWS Service: Amazon S3, AWS Request ID: 709B60A05E8E7062, AWS Error Code: InvalidRequest, AWS Error Message: The authorization mechanism you have provided is not supported. Please use AWS4-HMAC-SHA256. -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
-These are my local files, ~.m2/settings.xml (with fictious values, of course):
-
-<?xml version="1.0" encoding="UTF-8"?>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
-      http://maven.apache.org/xsd/settings-1.0.0.xsd">
-    <servers>
-        <server>
-            <id>s3.site</id>
-            <username>access_key</username>
-            <password>private_key</password>
-        </server>
-        <server>
-            <id>s3.release</id>
-            <username>access_key</username>
-            <password>private_key</password>
-        </server>
-        <server>
-            <id>s3.snapshot</id>
-            <username>access_key</username>
-            <password>private_key</password>
-        </server>
-    </servers>
-</settings>
-And my pom.xml:
-
 <project>
     <build>
         <extensions>
@@ -573,4 +522,5 @@ And my pom.xml:
     </distributionManagement>
 ...
 </project>
+
 </project>
