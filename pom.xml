@@ -25,9 +25,9 @@
 	
 
 		<!--https://syam_bitbucket@bitbucket.org/syam_bitbucket/game_maven.git-->
-        <connection>scm:git:https://syam_bitbucket@bitbucket.org/syam_bitbucket/game_maven.git</connection>
-        <developerConnection>scm:git:https://syam_bitbucket@bitbucket.org/syam_bitbucket/game_maven.git</developerConnection>
-        <url>scm:git:https://syam_bitbucket@bitbucket.org/syam_bitbucket/game_maven.git</url>
+        <connection>scm:git:https://github.com/jayaprakash223/game-of-life.git</connection>
+        <developerConnection>scm:git:https://github.com/jayaprakash223/game-of-life.git</developerConnection>
+        <url>scm:git:https://github.com/jayaprakash223/game-of-life.git</url>
     </scm>
 	
 	<!-- This section is used for upload artifacts to releases and snapshot repositries  ######  BY SHYAM  ######  -->
